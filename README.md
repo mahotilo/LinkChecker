@@ -15,9 +15,9 @@ Check links and image sources on the current page
 * Typesetter CMS
 
 ## Manual Installation
-1. Download the [master ZIP archive](https://github.com/mahotilo/LinkChecker-M/archive/master.zip)
-2. Upload the extracted folder 'LinkChecker-M-master' to your server into the /addons directory
-3. Install using Typesetter's Admin Toolbox &rarr; Plugins &rarr; Manage &rarr; Available &rarr; LinkChecker-M
+1. Download the [master ZIP archive](https://github.com/mahotilo/LinkChecker/archive/master.zip)
+2. Upload the extracted folder 'LinkChecker-master' to your server into the /addons directory
+3. Install using Typesetter's Admin Toolbox &rarr; Plugins &rarr; Manage &rarr; Available &rarr; LinkChecker
 
 
 ## Demo
