@@ -1,7 +1,7 @@
 # [LinkChecker](https://github.com/mahotilo/LinkChecker) - Link Checker plugin for Typesetter CMS
 
 ## About
-Check links and image sourses on the current page
+Check links and image sources on the current page
 
 - checking results are stored for one month
 - sortable results table
