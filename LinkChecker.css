@@ -1,0 +1,12 @@
+#LCFormTable thead {
+	cursor:pointer;
+}
+
+#LCFormTable tbody tr td:first-child {
+	word-break: break-all;
+	white-space: normal;
+}
+
+#LCFormTable tbody tr td {
+	white-space: nowrap;
+}
