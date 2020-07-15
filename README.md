@@ -31,7 +31,7 @@ Based on  https://github.com/jakeRPowell/linkChecker
 
 ## Version history
 1.1
-- fix ewsults storage error
+- fix results storage error
 - add statistics
 - sort elements on status
 - add styling
