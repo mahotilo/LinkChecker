@@ -31,10 +31,10 @@ Based on  https://github.com/jakeRPowell/linkChecker
 
 ## Version history
 1.1
-	- fix ewsults storage error
-	- add statistics
-	- sort elements on status
-	- add styling
+- fix ewsults storage error
+- add statistics
+- sort elements on status
+- add styling
 	
 1.0
-	- initial version
+- initial version
