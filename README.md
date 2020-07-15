@@ -35,5 +35,6 @@ Based on  https://github.com/jakeRPowell/linkChecker
 	- add statistics
 	- sort elements on status
 	- add styling
+	
 1.0
 	- initial version
