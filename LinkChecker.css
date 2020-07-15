@@ -1,12 +1,57 @@
+#gp_admin_html #LCStatTable,
+#gp_admin_html #LCFormTable{
+	margin-top: 1rem;
+}
+
+
+/* LCStatTable */
+
+#LCStatTable {
+	width: 100%;
+	text-align: center;
+	margin-top: 1rem;
+}
+
+#LCStatTable th {
+	width: 33%;
+	color: white;
+}
+
+#LCStatTable th:nth-child(1) {
+	background: green;
+}
+
+#LCStatTable th:nth-child(2) {
+	background: red;
+}
+
+#LCStatTable th:nth-child(3) {
+	background: orange;
+}
+
+#LCStatTable tbody {
+	font-weight: bold;
+}
+
+
+/* LCFormTable */
 #LCFormTable thead {
 	cursor:pointer;
+}
+
+#LCFormTable thead {
+    border-bottom: 2px solid;
+}
+
+#LCFormTable tbody tr:nth-child(2n) {
+    background: #f3f3f3;
 }
 
 #LCFormTable tbody tr td:first-child {
 	word-break: break-all;
 	white-space: normal;
 }
-
+	
 #LCFormTable tbody tr td {
 	white-space: nowrap;
 }

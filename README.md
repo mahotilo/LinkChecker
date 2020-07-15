@@ -30,5 +30,10 @@ GPL 2, for bundled thirdparty components see the respective subdirectories.
 Based on  https://github.com/jakeRPowell/linkChecker
 
 ## Version history
+1.1
+	- fix ewsults storage error
+	- add statistics
+	- sort elements on status
+	- add styling
 1.0
 	- initial version
