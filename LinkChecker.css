@@ -1,3 +1,14 @@
+.LChighlight{
+  animation: blinker 1s linear infinite !important;
+}
+
+@keyframes blinker {
+	0% { 
+			box-shadow: 0 0 0 15px yellow;
+	}
+}
+
+
 #gp_admin_html #LCStatTable,
 #gp_admin_html #LCFormTable{
 	margin-top: 1rem;

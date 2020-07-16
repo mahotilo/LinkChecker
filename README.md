@@ -1,10 +1,11 @@
 # [LinkChecker](https://github.com/mahotilo/LinkChecker) - Link Checker plugin for Typesetter CMS
 
 ## About
-Check links and image sources on the current page
+Check links on the current page
 
 - checking results are stored for one month
 - sortable results table
+- show checked link in page (scroll to and highlite for 10 sec)
 
 ## See also 
 * [Typesetter Home](http://www.typesettercms.com)
@@ -31,7 +32,8 @@ Based on  https://github.com/jakeRPowell/linkChecker
 
 ## Version history
 1.2
-- extend whitelist for click to call links
+- extend whitelist for "click to call" links
+- show checked link in page on click
 
 1.1
 - fix results storage error

@@ -157,15 +157,21 @@ class LinkChecker {
 		$dom = new DOMDocument();
 		@$dom->loadHTML($html);
 		$xpath = new DOMXPath($dom);
-		$hrefs = $xpath->evaluate("/html/body//a");
+		$elems = $xpath->evaluate("/html/body//a");
+//		$elems = $xpath->evaluate("/html/body//a | /html/body//img"); //also check images
 		$rows = '';
 		$errors = 0;
 		$oks = 0;
 		$warnings = 0;
-		for ($i = 0; $i < $hrefs->length; $i++) {
-			$href = $hrefs->item($i);
-			$url = $href->getAttribute('href');
-
+		for ($i = 0; $i < $elems->length; $i++) {
+			$elem = $elems->item($i);
+			$url = $elem->getAttribute('href');
+/*
+			if ($url == '') {
+				$url = $elem->getAttribute('src');
+			}
+*/			
+			
 			$p = strpos($url, '#');
 			if ($p !== false) {
 				$url = substr($url, 0, $p);
@@ -181,20 +187,21 @@ class LinkChecker {
 			}
 			
 			if ($url) {
+				$src_url = $url;
 				$isAbsoluteUrl = strpos($url, 'http://') !== false || strpos($url, 'https://') !== false;
 				$url = $isAbsoluteUrl ? $url : $website.'/'.$url;
 				$httpCode = self::get_http_response_code($url);
 
-				$rows .= "<tr>";
-				$rows .= "<td>".$url."</td>";
+				$rows .= '<tr>';
+				$rows .= '<td><a onclick="ShowWhereLinkIs(\''.$src_url.'\');">'.$url.'</a></td>';
 				if($httpCode == 200) {
-					$rows .= "<td style='color: green'>ok</td>";
+					$rows .= '<td style="color: green">ok</td>';
 					$oks += 1;
 				} else if($httpCode == 301 || $httpCode == 302) {
-					$rows .= "<td style='color: orange'>Redirected</td>";
+					$rows .= '<td style="color: orange">Redirected</td>';
 					$warnings += 1;
 				} else {
-					$rows .= "<td style='color: red'>Not working</td>";
+					$rows .= '<td style="color: red">Not working</td>';
 					$errors += 1;
 				}
 				$rows .= "</tr>";
