@@ -2,7 +2,7 @@
 /**
  *
  * @author      Mahotilo
- * @version     1.0
+ * @version     1.2
  * based on  https://github.com/jakeRPowell/linkChecker
  */
 
@@ -11,7 +11,14 @@ defined('is_running') or die('Not an entry point...');
 class LinkChecker {
 	
 	public static $results = array();
-	
+
+	public static $WhiteList = array(
+		'mailto:',
+		'tel:','callto:','wtai:','sms:',
+		'market:',
+		'skype:','gtalk:','whatsapp:'
+	);
+
 
   /* 
    * Typesetter Action hook 
@@ -165,8 +172,14 @@ class LinkChecker {
 			}
 
 			$url = ltrim($url, '/');
-			if (strpos($url, 'mailto:') === 0) $url = '';
-			if (strpos($url, 'whatsapp:') === 0) $url = '';
+
+			foreach(self::$WhiteList as $el) {
+				if (strpos($url, $el) !== false) {
+					$url = '';
+					break;
+				}	
+			}
+			
 			if ($url) {
 				$isAbsoluteUrl = strpos($url, 'http://') !== false || strpos($url, 'https://') !== false;
 				$url = $isAbsoluteUrl ? $url : $website.'/'.$url;

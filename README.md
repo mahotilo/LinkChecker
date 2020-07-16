@@ -30,6 +30,9 @@ GPL 2, for bundled thirdparty components see the respective subdirectories.
 Based on  https://github.com/jakeRPowell/linkChecker
 
 ## Version history
+1.2
+- extend whitelist for click to call links
+
 1.1
 - fix results storage error
 - add statistics
