@@ -69,7 +69,7 @@ class LinkChecker {
 		if( \gp\tool::LoggedIn() ){
 			$page->admin_links[] = array(
 				$page->requested, 
-				'<i class="fa fa-chain-broken"></i><i class="fa fa-search"></i>',
+				'<i class="fa fa-chain-broken" style="margin-left: 0; margin-right: -0.1em;"></i><i class="fa fa-search"></i>',
 				'cmd=LC_Form', 
 				'title="check Links" class="" data-cmd="gpabox"'
 			);
