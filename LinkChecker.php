@@ -74,15 +74,17 @@ class LinkChecker {
 				'title="check Links" class="" data-cmd="gpabox"'
 			);
 
-			ob_start();
-			echo '<div class="inline_box">';
-			echo '<h3>Link Checker</h3>';
-			echo '<hr>';
 			switch( $cmd ){
 				case 'LC_Form':
+					ob_start();
+					echo '<div class="inline_box">';
+					echo '<h3>Link Checker</h3>';
+					echo '<hr>';
+					
 					if ( $page->visibility || \gp\tool\Files::Exists(dirname($page->file).'/draft.php') ) {
-						echo 'Action is not available for drafts or private pages';
+						echo 'Checking is not available for drafts or private pages';
 						echo '</div>';
+						$page->contentBuffer = ob_get_clean();
 						return 'return';
 					}
 
@@ -100,6 +102,10 @@ class LinkChecker {
 					break;
 				
 				case 'LC_Check':
+					ob_start();
+					echo '<div class="inline_box">';
+					echo '<h3>Link Checker</h3>';
+					echo '<hr>';
 					echo self::LinkCheckerForm();
 					echo '<br>';
 					echo self::GetLinkCheckerTable();
