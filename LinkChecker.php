@@ -94,7 +94,7 @@ class LinkChecker {
 					if ($result !== false) {
 						echo $result; 
 					} else {
-						echo 'No data available. Run check';
+						echo 'No actual data available. Run check';
 					}
 					echo '</div>';
 					$page->contentBuffer = ob_get_clean();
@@ -144,12 +144,12 @@ class LinkChecker {
 		global $page;
 		if ( !empty(self::$results) ) {
 			$key = array_search($page->title, array_column(self::$results, 0));
-			if ( isset($key) ) {
+			if ( $key !== false ) {
 				if (self::$results[$key][1] == $page->fileModTime) {
 					return self::$results[$key][3];
 				} else {
 					array_splice(self::$results, $key, 1);
-					self::SaveResults();					
+					self::SaveResults();
 				}
 			}
 		}
@@ -175,7 +175,7 @@ class LinkChecker {
 			$elem = $elems->item($i);
 			$url = $elem->getAttribute('href');
 /*
-			if ($url == '') {
+			if ($url == '') { // it is the image
 				$url = $elem->getAttribute('src');
 			}
 */			
@@ -263,7 +263,7 @@ class LinkChecker {
 		} while ($key !== false);
 		self::$results[] = $results_item;
 		self::SaveResults();
-		
+
 		return $result;
 	}
 
@@ -286,7 +286,5 @@ class LinkChecker {
 		curl_close($handle);
 		return $httpCode;
 	}
-
-  
   
 }
