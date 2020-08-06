@@ -31,6 +31,9 @@ GPL 2, for bundled thirdparty components see the respective subdirectories.
 Based on  https://github.com/jakeRPowell/linkChecker
 
 ## Version history
+1.3
+- fix empty records handling
+
 1.2
 - extend whitelist for "click to call" links
 - show checked link in page on click
