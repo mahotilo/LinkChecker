@@ -142,12 +142,16 @@ class LinkChecker {
 
 	public static function AddLinkCheckerTable() {
 		global $page;
-		$key = array_search($page->title, array_column(self::$results, 0));
-		if (self::$results[$key][1] == $page->fileModTime) {
-			return self::$results[$key][3];
-		} else {
-			array_splice(self::$results, $key, 1);
-			self::SaveResults();					
+		if ( !empty(self::$results) ) {
+			$key = array_search($page->title, array_column(self::$results, 0));
+			if ( isset($key) ) {
+				if (self::$results[$key][1] == $page->fileModTime) {
+					return self::$results[$key][3];
+				} else {
+					array_splice(self::$results, $key, 1);
+					self::SaveResults();					
+				}
+			}
 		}
 		return false;		
 	}

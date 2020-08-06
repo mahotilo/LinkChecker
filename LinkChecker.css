@@ -16,7 +16,6 @@
 
 
 /* LCStatTable */
-
 #LCStatTable {
 	width: 100%;
 	text-align: center;
@@ -26,6 +25,8 @@
 #LCStatTable th {
 	width: 33%;
 	color: white;
+	text-align: center;
+	padding: 0.3em 0;
 }
 
 #LCStatTable th:nth-child(1) {
@@ -46,6 +47,10 @@
 
 
 /* LCFormTable */
+#LCFormTable{
+	width: 100%;
+}
+
 #LCFormTable thead {
 	cursor:pointer;
 }
