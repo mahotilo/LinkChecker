@@ -32,7 +32,7 @@ Based on  https://github.com/jakeRPowell/linkChecker
 
 ## Version history
 1.4
-- use TS integrated tablesorter.js and classes
+- drop tablesort.js and use TS integrated tablesorter.js and classes.
 
 1.3
 - fix empty records handling
