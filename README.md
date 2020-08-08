@@ -31,6 +31,9 @@ GPL 2, for bundled thirdparty components see the respective subdirectories.
 Based on  https://github.com/jakeRPowell/linkChecker
 
 ## Version history
+1.4
+- use TS integrated tablesorter.js and classes
+
 1.3
 - fix empty records handling
 

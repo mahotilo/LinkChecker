@@ -47,20 +47,8 @@
 
 
 /* LCFormTable */
-#LCFormTable{
-	width: 100%;
-}
-
-#LCFormTable thead {
-	cursor:pointer;
-}
-
-#LCFormTable thead {
-    border-bottom: 2px solid;
-}
-
-#LCFormTable tbody tr:nth-child(2n) {
-    background: #f3f3f3;
+#LCFormTable th {
+	min-width: 7em;
 }
 
 #LCFormTable tbody tr td:first-child {
@@ -70,4 +58,16 @@
 	
 #LCFormTable tbody tr td {
 	white-space: nowrap;
+}
+
+#LCFormTable.bordered>tbody>tr>td.normal {
+	color: green!important;
+}
+
+#LCFormTable.bordered>tbody>tr>td.warning {
+	color: orange!important;
+}
+
+#LCFormTable.bordered>tbody>tr>td.error {
+	color: red!important;
 }

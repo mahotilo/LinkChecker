@@ -2,7 +2,7 @@
 /**
  *
  * @author      Mahotilo
- * @version     1.2
+ * @version     1.4
  * based on  https://github.com/jakeRPowell/linkChecker
  */
 
@@ -27,7 +27,7 @@ class LinkChecker {
 		global $page, $addonRelativeCode;
 		if( \gp\tool::LoggedIn() ){
 			$page->css_admin[] = $addonRelativeCode . '/LinkChecker.css';
-			$page->head_js[] = $addonRelativeCode . '/thirdparty/jquery-tablesort/jquery.tablesort.min.js';
+			$page->head_js[] = '/include/thirdparty/tablesorter/tablesorter.js';
 			$page->head_js[] = $addonRelativeCode . '/LinkChecker.js';
 		}
 	}
@@ -203,13 +203,13 @@ class LinkChecker {
 				$rows .= '<tr>';
 				$rows .= '<td><a onclick="ShowWhereLinkIs(\''.$src_url.'\');">'.$url.'</a></td>';
 				if($httpCode == 200) {
-					$rows .= '<td style="color: green">ok</td>';
+					$rows .= '<td class="normal">ok</td>';
 					$oks += 1;
 				} else if($httpCode == 301 || $httpCode == 302) {
-					$rows .= '<td style="color: orange">Redirected</td>';
+					$rows .= '<td class="warning">Redirected</td>';
 					$warnings += 1;
 				} else {
-					$rows .= '<td style="color: red">Not working</td>';
+					$rows .= '<td class="error">Not working</td>';
 					$errors += 1;
 				}
 				$rows .= "</tr>";
@@ -233,11 +233,11 @@ class LinkChecker {
 		$result .= '</tr>';
 		$result .= '</tbody>';
 		$result .= '</table>';
-		$result .= '<table id="LCFormTable">';
+		$result .= '<table id="LCFormTable" class="tablesorter full_width table-striped bordered">';
 		$result .= '<thead>';
 		$result .= '<tr>';
-		$result .= '<th data-sort="string">URL</th>';
-		$result .= '<th style="width:5em" class="default-sort" data-sort="string">Status</th>';
+		$result .= '<th>URL</th>';
+		$result .= '<th>Status</th>';
 		$result .= '</tr>';
 		$result .= '</thead>';
 		$result .= '<tbody>';
@@ -246,7 +246,12 @@ class LinkChecker {
 		$result .= '</table>';
 		$result .= '</div>';
 		$result .= '<script>';
-		$result .= '	$("#LCFormTable").tablesort().data("tablesort").sort($("th.default-sort"));';
+		$result .= '	$("#LCFormTable").tablesorter({
+							sortList: [[1,0]],
+							cssHeader : "gp_header -full_width",
+							cssAsc : "gp_header_asc",
+							cssDesc : "gp_header_desc",
+						});';
 		$result .= '</script>';
 
 		$results_item = array();

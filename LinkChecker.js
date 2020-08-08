@@ -13,7 +13,7 @@
 			next();
 		});
 
-		$("HTML, BODY").animate({scrollTop: $elv.offset().top},500);
+		$("HTML, BODY").animate({scrollTop: $elv.offset().top-100},500);
 	}
 	
 })(jQuery);
