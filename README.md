@@ -5,7 +5,7 @@ Check links on the current page
 
 - checking results are stored for one month
 - sortable results table
-- show checked link in page (scroll to and highlite for 10 sec)
+- show checked link in page (scroll to and highlight for 10 sec)
 
 ## See also 
 * [Typesetter Home](http://www.typesettercms.com)
