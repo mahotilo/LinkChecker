@@ -16,7 +16,9 @@ class LinkChecker {
 		'mailto:',
 		'tel:','callto:','wtai:','sms:',
 		'market:',
-		'skype:','gtalk:','whatsapp:'
+		'skype:','gtalk:','whatsapp:',
+		'facebook.com/sharer',
+		'twitter.com/intent',
 	);
 
 
