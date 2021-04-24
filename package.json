@@ -4,7 +4,7 @@
   },
   "dependencies": {
     "TS" : "Typesetter/Typesetter",
-    "TS": "^5.1.0"
+    "Typesetter/Typesetter": "^5.1.0"
   },
   "devDependencies": {
   }
