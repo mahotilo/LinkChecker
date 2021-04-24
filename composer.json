@@ -3,9 +3,10 @@
     "type": "plugin",
     "description":"",
     "hoempage":"",
-    "require": {},
-    "require-dev": {
+    "require": {
 	"symfony/process": "^1",
+    },
+    "require-dev": {
         "typesetter/typesetter": ">5.1"
     },
 	"scripts": {
