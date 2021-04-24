@@ -1,0 +1,10 @@
+{
+  "repository": {},
+  "scripts": {
+  },
+  "dependencies": {
+    "Typesetter": "^5.1.0"
+  },
+  "devDependencies": {
+  }
+}
