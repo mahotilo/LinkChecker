@@ -10,5 +10,6 @@
     "require-dev": {
     },
 	"scripts": {
+        "Typesetter/Typesetter": ">5.1"
 	}
 }
