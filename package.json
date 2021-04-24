@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "typesetter": "^1.2.1"
+    "typesetter/typesetter": "^5.1"
   },
   "devDependencies": {
   },
