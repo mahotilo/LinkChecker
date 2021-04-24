@@ -4,7 +4,7 @@
     "description":"",
     "hoempage":"",
     "require": {
-	"symfony/process": "^1",
+	"symfony/process": ">5.1",
         "Typesetter/Typesetter": ">5.1"
     },
     "require-dev": {
