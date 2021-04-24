@@ -3,7 +3,7 @@
   "scripts": {
   },
   "dependencies": {
-    "typesetter": "^5.1.0"
+    "typesetter": "typesetter/typesetter"
   },
   "devDependencies": {
   }
