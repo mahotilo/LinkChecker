@@ -8,7 +8,6 @@
         "Typesetter/Typesetter": ">5.1",
     },
     "require-dev": {
-	"symfony/process": ">5.1",
     },
 	"scripts": {
 	}
