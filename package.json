@@ -1,10 +1,6 @@
 {
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "typesetter/typesetter": "^5.1"
-  },
-  "devDependencies": {
-  },
-  "scripts": {
+    "typesetter/typesetter": "^5.1",
   },
 }
