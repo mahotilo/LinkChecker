@@ -5,7 +5,7 @@
     "hoempage":"",
     "require": {
 	"symfony/process": "^1",
-        "typesetter/typesetter": ">5.1"
+        "github.com/Typesetter/Typesetter": ">5.1"
     },
     "require-dev": {
     },
