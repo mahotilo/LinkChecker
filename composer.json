@@ -5,7 +5,7 @@
     "hoempage":"http://www.typesettercms.com/",
     "require": {},
     "require-dev": {
-        "Typesetter/Typesetter": ">5.1"
+        "typesetter/typesetter": ">5.1"
     },
 	"scripts": {
 	}
