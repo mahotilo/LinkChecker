@@ -5,7 +5,7 @@
     "hoempage":"",
     "require": {
 	"symfony/process": ">5.1",
-        "Typesetter": ">5.1",
+        "mahotilo/Typesetter": ">5.1",
         "Typesetter/Typesetter": ">5.1",
     },
     "require-dev": {
