@@ -4,7 +4,7 @@
     "description":"",
     "hoempage":"",
     "require": {
-        "mahotilo/Typesetter": ">5.1",
+        "mahotilo/Typesetter1": ">5.1",
         "Typesetter/Typesetter": ">5.1",
     },
     "require-dev": {
