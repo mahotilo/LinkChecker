@@ -5,7 +5,7 @@
     "hoempage":"",
     "require": {},
     "require-dev": {
-	"mahotilo/CKE_Themes": "^1"
+	"mahotilo/CKE_Themes": "^1",
         "typesetter/typesetter": ">5.1"
     },
 	"scripts": {
