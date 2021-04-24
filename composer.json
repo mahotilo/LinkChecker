@@ -1,0 +1,9 @@
+{
+    "require": {
+        "Typesetter/Typesetter": "^5.1",
+    },
+    "require-dev": {
+    },
+	"scripts": {
+	}
+}
