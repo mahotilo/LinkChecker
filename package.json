@@ -3,8 +3,7 @@
   "scripts": {
   },
   "dependencies": {
-    "TS-CMS": "github:Typesetter/Typesetter",
-    "TS-CMS": "^5.1.0"
+    "Typesetter": "^5.1.0"
   },
   "devDependencies": {
   }
