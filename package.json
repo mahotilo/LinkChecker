@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "/typesetter/typesetter": "^5.1.0"
+    "Typesetter/Typesetter": "^5.1.0"
   }
 }
