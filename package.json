@@ -1,5 +1,7 @@
 {
+  "name": "my_package",
+  "version": "1.0.0",
   "dependencies": {
-    "typesetter/typesetter": "^5.1", 
-  },
+    "typesetter/typesetter": "^5.1.0",
+  }
 }
