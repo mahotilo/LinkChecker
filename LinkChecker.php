@@ -169,10 +169,8 @@ class LinkChecker {
 		$xpath = new DOMXPath($dom);
 		$elems = $xpath->evaluate("/html/body//a");
 //		$elems = $xpath->evaluate("/html/body//a | /html/body//img"); //also check images
-		$rows = '';
-		$errors = 0;
-		$oks = 0;
-		$warnings = 0;
+
+		$urls = array();
 		for ($i = 0; $i < $elems->length; $i++) {
 			$elem = $elems->item($i);
 			$url = $elem->getAttribute('href');
@@ -195,27 +193,36 @@ class LinkChecker {
 					break;
 				}	
 			}
-			
-			if ($url) {
-				$src_url = $url;
-				$isAbsoluteUrl = strpos($url, 'http://') !== false || strpos($url, 'https://') !== false;
-				$url = $isAbsoluteUrl ? $url : $website.'/'.$url;
-				$httpCode = self::get_http_response_code($url);
 
-				$rows .= '<tr>';
-				$rows .= '<td><a onclick="ShowWhereLinkIs(\''.$src_url.'\');">'.$url.'</a></td>';
-				if($httpCode == 200) {
-					$rows .= '<td class="normal">ok</td>';
-					$oks += 1;
-				} else if($httpCode == 301 || $httpCode == 302) {
-					$rows .= '<td class="warning">Redirected</td>';
-					$warnings += 1;
-				} else {
-					$rows .= '<td class="error">Not working</td>';
-					$errors += 1;
-				}
-				$rows .= "</tr>";
+			if ($url) {
+				$urls[] = $url;
 			}
+		}
+		$urls = array_unique($urls);
+
+		$rows = '';
+		$errors = 0;
+		$oks = 0;
+		$warnings = 0;
+		foreach ($urls as $url) {
+			$src_url = $url;
+			$isAbsoluteUrl = strpos($url, 'http://') !== false || strpos($url, 'https://') !== false;
+			$url = $isAbsoluteUrl ? $url : $website.'/'.$url;
+			$httpCode = self::get_http_response_code($url);
+
+			$rows .= '<tr>';
+			$rows .= '<td><a onclick="ShowWhereLinkIs(\''.$src_url.'\');">'.$url.'</a></td>';
+			if($httpCode == 200) {
+				$rows .= '<td class="normal">ok</td>';
+				$oks += 1;
+			} else if($httpCode == 301 || $httpCode == 302) {
+				$rows .= '<td class="warning">Redirected</td>';
+				$warnings += 1;
+			} else {
+				$rows .= '<td class="error">Not working</td>';
+				$errors += 1;
+			}
+			$rows .= "</tr>";
 		}
 
 		$result  = '';
@@ -270,27 +277,26 @@ class LinkChecker {
 		} while ($key !== false);
 		self::$results[] = $results_item;
 		self::SaveResults();
-
 		return $result;
 	}
 
 	public static function get_http_response_code($url) {
-		$handle = curl_init($url);
-		curl_setopt($handle, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.2 (KHTML, like Gecko) Chrome/22.0.1216.0 Safari/537.2");
-		curl_setopt($handle, CURLOPT_BINARYTRANSFER, 1);
-		curl_setopt($handle, CURLOPT_HEADER, 0);
-		curl_setopt($handle, CURLOPT_TIMEOUT, 10);
-		curl_setopt($handle, CURLOPT_FOLLOWLOCATION, 1);
-		curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
-		curl_setopt($handle, CURLOPT_RETURNTRANSFER, TRUE);
-
-		/* Get the HTML or whatever is linked in $url. */
-		$response = curl_exec($handle);
-
-		/* Check for 404 (file not found). */
-		$httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
-
-		curl_close($handle);
+		$httpCode = 0;
+		stream_context_set_default(
+			array(
+				'http' => array(
+					'method' => 'HEAD',
+					'timeout' => '3',
+					'max_redirects' => '0',
+					'ignore_errors' => '1', 
+				)
+			)
+		);
+		$headers = get_headers($url);
+		if (!!$headers) {
+			$resp = explode(' ',$headers[0], 3);
+			$httpCode = $resp[1];
+		}
 		return $httpCode;
 	}
   
