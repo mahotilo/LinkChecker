@@ -31,6 +31,9 @@ GPL 2, for bundled thirdparty components see the respective subdirectories.
 Based on  https://github.com/jakeRPowell/linkChecker
 
 ## Version history
+1.4.3
+- getting rid of CURL to improve link checking
+
 1.4.2
 - add facebook and twitter share links to whitelist
 
