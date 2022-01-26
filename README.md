@@ -32,7 +32,7 @@ Based on  https://github.com/jakeRPowell/linkChecker
 
 ## Version history
 1.4.4
-- fix CSS styles for link status colours
+- fix CSS styles for link status colour
 - add pinterest and telegram share links to whitelist
 - use PHP default timeout for get_headers()
 
