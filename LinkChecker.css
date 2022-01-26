@@ -60,14 +60,14 @@
 	white-space: nowrap;
 }
 
-#LCFormTable.bordered>tbody>tr>td.normal {
+#gp_admin_html #LCFormTable td.normal {
 	color: green!important;
 }
 
-#LCFormTable.bordered>tbody>tr>td.warning {
+#gp_admin_html #LCFormTable td.warning {
 	color: orange!important;
 }
 
-#LCFormTable.bordered>tbody>tr>td.error {
+#gp_admin_html #LCFormTable td.error {
 	color: red!important;
 }

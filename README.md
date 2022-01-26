@@ -31,6 +31,11 @@ GPL 2, for bundled thirdparty components see the respective subdirectories.
 Based on  https://github.com/jakeRPowell/linkChecker
 
 ## Version history
+1.4.4
+- fix CSS styles for link status colours
+- add pinterest and telegram share links to whitelist
+- use PHP default timeout for get_headers()
+
 1.4.3
 - get rid of cURL to improve link checking
 
