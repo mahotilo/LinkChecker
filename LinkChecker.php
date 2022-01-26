@@ -288,7 +288,7 @@ class LinkChecker {
 			array(
 				'http' => array(
 					'method' => 'HEAD',
-					//'timeout' => '3', //Comment to use PHP default timeout
+//					'timeout' => '3', //Comment to use PHP default timeout
 					'max_redirects' => '0',
 					'ignore_errors' => '1', 
 				)
